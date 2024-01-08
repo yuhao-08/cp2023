@@ -1,0 +1,9 @@
+#include <stdio.h>: 包含標準輸入輸出標頭文件，這是為了使用 printf 函式。
+
+int main(): 主函式的開始，程式執行的起點。
+
+{}: 大括號標示主函式的程式碼區塊。
+
+printf("hello world\n");: 使用 printf 函式將字串 "hello world" 輸出到標準輸出（通常是終端或控制台），並在最後換行。
+
+return 0;: 主函式的返回語句，表示程式正常結束。
