@@ -2066,14 +2066,11 @@
 <p><span>D coord: (224，329)    D coord: (170，274)     D coord: (150，199)    D coord: (170，124)</span></p>
 <p><span><img height="228" src="https://41223251.github.io/cp2023/images/roc_flag_in_gd.png" width="342"/></span></p>
 <h2><span>第二部分</span></h2>
-<ol>
-<li><span>ABED 的四條直線與白日中的大圓所相交的四個點座標.</span><span></span></li>
-<li><span>交點: (388.90, 55.10)<br/>交點: (155.10, 288.90)<br/>交點: (449.72, 119.47)<br/>交點: (130.07, 204.72)</span></li>
-</ol>
-<table border="0" cellpadding="0" cellspacing="0" style="width: 565.388px;">
+<p>1.<span>請列出第二組 ABED 的四條直線與白日中的大圓所相交 (intersect) 的四個點座標.</span></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
-<td class="gutter" style="width: 20px;">
+<td class="gutter">
 <div class="line number1 index0 alt2">1</div>
 <div class="line number2 index1 alt1">2</div>
 <div class="line number3 index2 alt2">3</div>
@@ -2221,159 +2218,160 @@
 <div class="line number145 index144 alt2">145</div>
 <div class="line number146 index145 alt1">146</div>
 </td>
-<td class="code" style="width: 539.388px;">
+<td class="code">
 <div class="container">
-<div class="line number1 index0 alt2"><code class="html plain">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China</code></div>
-<div class="line number2 index1 alt1"><code class="html plain">// 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621</code></div>
-<div class="line number3 index2 alt2"><code class="html plain">// cc roc_flag_in_gd.c -lgd -lm to link with gd and math library</code></div>
-<div class="line number4 index3 alt1"><code class="html plain">// https://www.rapidtables.com/web/color/RGB_Color.html</code></div>
-<div class="line number5 index4 alt2"><code class="html plain">// 幾何形狀著色與繪圖練習</code></div>
-<div class="line number6 index5 alt1"><code class="html plain">// 以下 gd 繪圖程式嘗試畫出 ROC 國旗, 請根據下列程式內容完成後續的國旗繪圖</code></div>
-<div class="line number7 index6 alt2"><code class="html plain">#include &lt;</code><code class="html keyword">stdio.h</code><code class="html plain">&gt;</code></div>
-<div class="line number8 index7 alt1"><code class="html plain">#include &lt;</code><code class="html keyword">gd.h</code><code class="html plain">&gt;</code></div>
-<div class="line number9 index8 alt2"><code class="html plain">#include &lt;</code><code class="html keyword">math.h</code><code class="html plain">&gt;</code></div>
+<div class="line number1 index0 alt2"><code class="html plain">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China </code></div>
+<div class="line number2 index1 alt1"><code class="html plain">// 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621 </code></div>
+<div class="line number3 index2 alt2"><code class="html plain">// cc roc_flag_in_gd.c -lgd -lm to link with gd and math library </code></div>
+<div class="line number4 index3 alt1"><code class="html plain">// https://www.rapidtables.com/web/color/RGB_Color.html </code></div>
+<div class="line number5 index4 alt2"><code class="html plain">// 幾何形狀著色與繪圖練習 </code></div>
+<div class="line number6 index5 alt1"><code class="html plain">// 以下 gd 繪圖程式嘗試畫出 ROC 國旗, 請根據下列程式內容完成後續的國旗繪圖 </code></div>
+<div class="line number7 index6 alt2"><code class="html plain">#include &lt;</code><code class="html keyword">stdio.h</code><code class="html plain">&gt; </code></div>
+<div class="line number8 index7 alt1"><code class="html plain">#include &lt;</code><code class="html keyword">gd.h</code><code class="html plain">&gt; </code></div>
+<div class="line number9 index8 alt2"><code class="html plain">#include &lt;</code><code class="html keyword">math.h</code><code class="html plain">&gt; </code></div>
 <div class="line number10 index9 alt1"><code class="html spaces">  </code> </div>
-<div class="line number11 index10 alt2"><code class="html plain">void draw_roc_flag(gdImagePtr img);</code></div>
-<div class="line number12 index11 alt1"><code class="html plain">void draw_white_sun(gdImagePtr img, int x, int y, int size, int color);</code></div>
+<div class="line number11 index10 alt2"><code class="html plain">void draw_roc_flag(gdImagePtr img); </code></div>
+<div class="line number12 index11 alt1"><code class="html plain">void draw_white_sun(gdImagePtr img, int x, int y, int size, int color); </code></div>
 <div class="line number13 index12 alt2"><code class="html spaces">  </code> </div>
-<div class="line number14 index13 alt1"><code class="html plain">int main() {</code></div>
-<div class="line number15 index14 alt2"><code class="html spaces">    </code><code class="html plain">// width 3: height 2</code></div>
-<div class="line number16 index15 alt1"><code class="html spaces">    </code><code class="html plain">int width = 1200;</code></div>
-<div class="line number17 index16 alt2"><code class="html spaces">    </code><code class="html plain">// 國旗長寬比為 3:2</code></div>
-<div class="line number18 index17 alt1"><code class="html spaces">    </code><code class="html plain">int height = (int)(width*2.0 / 3.0);</code></div>
+<div class="line number14 index13 alt1"><code class="html plain">int main() { </code></div>
+<div class="line number15 index14 alt2"><code class="html spaces">    </code><code class="html plain">// width 3: height 2 </code></div>
+<div class="line number16 index15 alt1"><code class="html spaces">    </code><code class="html plain">int width = 1200; </code></div>
+<div class="line number17 index16 alt2"><code class="html spaces">    </code><code class="html plain">// 國旗長寬比為 3:2 </code></div>
+<div class="line number18 index17 alt1"><code class="html spaces">    </code><code class="html plain">int height = (int)(width*2.0 / 3.0); </code></div>
 <div class="line number19 index18 alt2"><code class="html spaces">  </code> </div>
-<div class="line number20 index19 alt1"><code class="html spaces">    </code><code class="html plain">gdImagePtr img = gdImageCreateTrueColor(width, height);</code></div>
-<div class="line number21 index20 alt2"><code class="html spaces">    </code><code class="html plain">gdImageAlphaBlending(img, 0);</code></div>
+<div class="line number20 index19 alt1"><code class="html spaces">    </code><code class="html plain">gdImagePtr img = gdImageCreateTrueColor(width, height); </code></div>
+<div class="line number21 index20 alt2"><code class="html spaces">    </code><code class="html plain">gdImageAlphaBlending(img, 0); </code></div>
 <div class="line number22 index21 alt1"><code class="html spaces">  </code> </div>
-<div class="line number23 index22 alt2"><code class="html spaces">    </code><code class="html plain">draw_roc_flag(img);</code></div>
+<div class="line number23 index22 alt2"><code class="html spaces">    </code><code class="html plain">draw_roc_flag(img); </code></div>
 <div class="line number24 index23 alt1"><code class="html spaces">  </code> </div>
-<div class="line number25 index24 alt2"><code class="html spaces">    </code><code class="html plain">FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</code></div>
-<div class="line number26 index25 alt1"><code class="html spaces">    </code><code class="html plain">if (outputFile == NULL) {</code></div>
-<div class="line number27 index26 alt2"><code class="html spaces">        </code><code class="html plain">fprintf(stderr, "Error opening the output file.\n");</code></div>
-<div class="line number28 index27 alt1"><code class="html spaces">        </code><code class="html plain">return 1;</code></div>
-<div class="line number29 index28 alt2"><code class="html spaces">    </code><code class="html plain">}</code></div>
-<div class="line number30 index29 alt1"><code class="html spaces">    </code><code class="html plain">gdImagePngEx(img, outputFile, 9);</code></div>
-<div class="line number31 index30 alt2"><code class="html spaces">    </code><code class="html plain">fclose(outputFile);</code></div>
-<div class="line number32 index31 alt1"><code class="html spaces">    </code><code class="html plain">gdImageDestroy(img);</code></div>
-<div class="line number33 index32 alt2"><code class="html spaces">    </code><code class="html plain">return 0;</code></div>
-<div class="line number34 index33 alt1"><code class="html plain">}</code></div>
-<div class="line number35 index34 alt2"><code class="html plain">void draw_roc_flag(gdImagePtr img) {</code></div>
-<div class="line number36 index35 alt1"><code class="html spaces">    </code><code class="html plain">int width = gdImageSX(img);</code></div>
-<div class="line number37 index36 alt2"><code class="html spaces">    </code><code class="html plain">int height = gdImageSY(img);</code></div>
-<div class="line number38 index37 alt1"><code class="html spaces">    </code><code class="html plain">int red, white, blue;</code></div>
-<div class="line number39 index38 alt2"><code class="html spaces">    </code><code class="html plain">// 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處</code></div>
-<div class="line number40 index39 alt1"><code class="html spaces">    </code><code class="html plain">int center_x = (int)(width/4);</code></div>
-<div class="line number41 index40 alt2"><code class="html spaces">    </code><code class="html plain">int center_y = (int)(height/4);</code></div>
-<div class="line number42 index41 alt1"><code class="html spaces">    </code><code class="html plain">// gdImageFilledEllipse 需以長寬方向的 diameter 作圖</code></div>
-<div class="line number43 index42 alt2"><code class="html spaces">    </code><code class="html plain">// 由於中央白日圓形的半徑為青天寬度的 1/8</code></div>
-<div class="line number44 index43 alt1"><code class="html spaces">    </code><code class="html plain">// 因此中央白日圓形的直徑為青天寬度的 1/4, 也就是國旗寬度的 1/8</code></div>
-<div class="line number45 index44 alt2"><code class="html spaces">    </code><code class="html plain">// 而且白日十二道光芒的外圍圓形其半徑也是國旗寬度的1/8</code></div>
-<div class="line number46 index45 alt1"><code class="html spaces">    </code><code class="html plain">int sun_radius = (int)(width/8);</code></div>
-<div class="line number47 index46 alt2"><code class="html spaces">    </code><code class="html plain">// 中央白日圓形的直徑等於十二道光芒外圍圓形的半徑</code></div>
-<div class="line number48 index47 alt1"><code class="html spaces">    </code><code class="html plain">int white_circle_dia = sun_radius;</code></div>
-<div class="line number49 index48 alt2"><code class="html spaces">    </code><code class="html plain">// 中央藍色圓形半徑為中央白日的 1又 2/15</code></div>
-<div class="line number50 index49 alt1"><code class="html spaces">    </code><code class="html plain">int blue_circle_dia = white_circle_dia +  white_circle_dia*2/15;</code></div>
-<div class="line number51 index50 alt2"><code class="html spaces">    </code><code class="html plain">// 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值</code></div>
-<div class="line number52 index51 alt1"><code class="html spaces">    </code><code class="html plain">red = gdImageColorAllocate(img, 255, 0, 0); // 紅色</code></div>
-<div class="line number53 index52 alt2"><code class="html spaces">    </code><code class="html plain">white = gdImageColorAllocate(img, 255, 255, 255); // 白色</code></div>
-<div class="line number54 index53 alt1"><code class="html spaces">    </code><code class="html plain">blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色</code></div>
-<div class="line number55 index54 alt2"><code class="html spaces">    </code><code class="html plain">// 根據畫布大小塗上紅色長方形區域</code></div>
-<div class="line number56 index55 alt1"><code class="html spaces">    </code><code class="html plain">gdImageFilledRectangle(img, 0, 0, width, height, red);</code></div>
-<div class="line number57 index56 alt2"><code class="html spaces">    </code><code class="html plain">// 青天面積為整面國旗的 1/4, 也是採用長方形塗色</code></div>
-<div class="line number58 index57 alt1"><code class="html spaces">    </code><code class="html plain">gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);</code></div>
-<div class="line number59 index58 alt2"><code class="html spaces">  </code><code class="html plain">{int x1 = 429;</code></div>
-<div class="line number60 index59 alt1"><code class="html spaces">   </code><code class="html plain">int y1 = 125;</code></div>
-<div class="line number61 index60 alt2"><code class="html spaces">   </code><code class="html plain">int x2 = 279;</code></div>
-<div class="line number62 index61 alt1"><code class="html spaces">   </code><code class="html plain">int y2 = 165;</code></div>
+<div class="line number25 index24 alt2"><code class="html spaces">    </code><code class="html plain">FILE *outputFile = fopen("roc_flag_in_gd.png", "wb"); </code></div>
+<div class="line number26 index25 alt1"><code class="html spaces">    </code><code class="html plain">if (outputFile == NULL) { </code></div>
+<div class="line number27 index26 alt2"><code class="html spaces">        </code><code class="html plain">fprintf(stderr, "Error opening the output file.\n"); </code></div>
+<div class="line number28 index27 alt1"><code class="html spaces">        </code><code class="html plain">return 1; </code></div>
+<div class="line number29 index28 alt2"><code class="html spaces">    </code><code class="html plain">} </code></div>
+<div class="line number30 index29 alt1"><code class="html spaces">    </code><code class="html plain">gdImagePngEx(img, outputFile, 9); </code></div>
+<div class="line number31 index30 alt2"><code class="html spaces">    </code><code class="html plain">fclose(outputFile); </code></div>
+<div class="line number32 index31 alt1"><code class="html spaces">    </code><code class="html plain">gdImageDestroy(img); </code></div>
+<div class="line number33 index32 alt2"><code class="html spaces">    </code><code class="html plain">return 0; </code></div>
+<div class="line number34 index33 alt1"><code class="html plain">} </code></div>
+<div class="line number35 index34 alt2"><code class="html plain">void draw_roc_flag(gdImagePtr img) { </code></div>
+<div class="line number36 index35 alt1"><code class="html spaces">    </code><code class="html plain">int width = gdImageSX(img); </code></div>
+<div class="line number37 index36 alt2"><code class="html spaces">    </code><code class="html plain">int height = gdImageSY(img); </code></div>
+<div class="line number38 index37 alt1"><code class="html spaces">    </code><code class="html plain">int red, white, blue; </code></div>
+<div class="line number39 index38 alt2"><code class="html spaces">    </code><code class="html plain">// 白日位於青天面積正中央, 因此中心點座標為長寬各 1/4 處 </code></div>
+<div class="line number40 index39 alt1"><code class="html spaces">    </code><code class="html plain">int center_x = (int)(width/4); </code></div>
+<div class="line number41 index40 alt2"><code class="html spaces">    </code><code class="html plain">int center_y = (int)(height/4); </code></div>
+<div class="line number42 index41 alt1"><code class="html spaces">    </code><code class="html plain">// gdImageFilledEllipse 需以長寬方向的 diameter 作圖 </code></div>
+<div class="line number43 index42 alt2"><code class="html spaces">    </code><code class="html plain">// 由於中央白日圓形的半徑為青天寬度的 1/8 </code></div>
+<div class="line number44 index43 alt1"><code class="html spaces">    </code><code class="html plain">// 因此中央白日圓形的直徑為青天寬度的 1/4, 也就是國旗寬度的 1/8 </code></div>
+<div class="line number45 index44 alt2"><code class="html spaces">    </code><code class="html plain">// 而且白日十二道光芒的外圍圓形其半徑也是國旗寬度的1/8 </code></div>
+<div class="line number46 index45 alt1"><code class="html spaces">    </code><code class="html plain">int sun_radius = (int)(width/8); </code></div>
+<div class="line number47 index46 alt2"><code class="html spaces">    </code><code class="html plain">// 中央白日圓形的直徑等於十二道光芒外圍圓形的半徑 </code></div>
+<div class="line number48 index47 alt1"><code class="html spaces">    </code><code class="html plain">int white_circle_dia = sun_radius; </code></div>
+<div class="line number49 index48 alt2"><code class="html spaces">    </code><code class="html plain">// 中央藍色圓形半徑為中央白日的 1又 2/15 </code></div>
+<div class="line number50 index49 alt1"><code class="html spaces">    </code><code class="html plain">int blue_circle_dia = white_circle_dia +  white_circle_dia*2/15; </code></div>
+<div class="line number51 index50 alt2"><code class="html spaces">    </code><code class="html plain">// 根據 https://www.moi.gov.tw/cp.aspx?n=10621 訂定國旗三種顏色值 </code></div>
+<div class="line number52 index51 alt1"><code class="html spaces">    </code><code class="html plain">red = gdImageColorAllocate(img, 255, 0, 0); // 紅色 </code></div>
+<div class="line number53 index52 alt2"><code class="html spaces">    </code><code class="html plain">white = gdImageColorAllocate(img, 255, 255, 255); // 白色 </code></div>
+<div class="line number54 index53 alt1"><code class="html spaces">    </code><code class="html plain">blue = gdImageColorAllocate(img, 0, 0, 149); // 藍色 </code></div>
+<div class="line number55 index54 alt2"><code class="html spaces">    </code><code class="html plain">// 根據畫布大小塗上紅色長方形區域 </code></div>
+<div class="line number56 index55 alt1"><code class="html spaces">    </code><code class="html plain">gdImageFilledRectangle(img, 0, 0, width, height, red); </code></div>
+<div class="line number57 index56 alt2"><code class="html spaces">    </code><code class="html plain">// 青天面積為整面國旗的 1/4, 也是採用長方形塗色 </code></div>
+<div class="line number58 index57 alt1"><code class="html spaces">    </code><code class="html plain">gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue); </code></div>
+<div class="line number59 index58 alt2"><code class="html spaces">  </code><code class="html plain">{int x1 = 429; </code></div>
+<div class="line number60 index59 alt1"><code class="html spaces">   </code><code class="html plain">int y1 = 125; </code></div>
+<div class="line number61 index60 alt2"><code class="html spaces">   </code><code class="html plain">int x2 = 279; </code></div>
+<div class="line number62 index61 alt1"><code class="html spaces">   </code><code class="html plain">int y2 = 165; </code></div>
 <div class="line number63 index62 alt2"><code class="html spaces">   </code><code class="html plain">gdImageSetThickness(img, 10); // 設置線條寬度為10</code></div>
 <div class="line number64 index63 alt1"><code class="html spaces">   </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white); // 畫線</code></div>
-<div class="line number65 index64 alt2"><code class="html spaces">   </code><code class="html plain">// 畫一條線連接兩個點</code></div>
-<div class="line number66 index65 alt1"><code class="html spaces">   </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white);</code></div>
-<div class="line number67 index66 alt2"><code class="html spaces">  </code><code class="html plain">}</code></div>
-<div class="line number68 index67 alt1"><code class="html spaces">  </code><code class="html plain">{int x1 = 170;</code></div>
-<div class="line number69 index68 alt2"><code class="html spaces">     </code><code class="html plain">int y1 = 274;</code></div>
-<div class="line number70 index69 alt1"><code class="html spaces">     </code><code class="html plain">int x2 = 279;</code></div>
-<div class="line number71 index70 alt2"><code class="html spaces">     </code><code class="html plain">int y2 = 165;</code></div>
+<div class="line number65 index64 alt2"><code class="html spaces">   </code><code class="html plain">// 畫一條線連接兩個點 </code></div>
+<div class="line number66 index65 alt1"><code class="html spaces">   </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white); </code></div>
+<div class="line number67 index66 alt2"><code class="html spaces">  </code><code class="html plain">} </code></div>
+<div class="line number68 index67 alt1"><code class="html spaces">  </code><code class="html plain">{int x1 = 170; </code></div>
+<div class="line number69 index68 alt2"><code class="html spaces">     </code><code class="html plain">int y1 = 274; </code></div>
+<div class="line number70 index69 alt1"><code class="html spaces">     </code><code class="html plain">int x2 = 279; </code></div>
+<div class="line number71 index70 alt2"><code class="html spaces">     </code><code class="html plain">int y2 = 165; </code></div>
 <div class="line number72 index71 alt1"><code class="html spaces">  </code> </div>
-<div class="line number73 index72 alt2"><code class="html spaces">     </code><code class="html plain">// 畫一條線連接兩個點</code></div>
-<div class="line number74 index73 alt1"><code class="html spaces">     </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white);</code></div>
-<div class="line number75 index74 alt2"><code class="html spaces">  </code><code class="html plain">}</code></div>
-<div class="line number76 index75 alt1"><code class="html spaces">  </code><code class="html plain">{</code></div>
-<div class="line number77 index76 alt2"><code class="html spaces">    </code><code class="html plain">int x1 = 170;</code></div>
-<div class="line number78 index77 alt1"><code class="html spaces">     </code><code class="html plain">int y1 = 274;</code></div>
-<div class="line number79 index78 alt2"><code class="html spaces">     </code><code class="html plain">int x2 = 429;</code></div>
-<div class="line number80 index79 alt1"><code class="html spaces">     </code><code class="html plain">int y2 = 125;</code></div>
+<div class="line number73 index72 alt2"><code class="html spaces">     </code><code class="html plain">// 畫一條線連接兩個點 </code></div>
+<div class="line number74 index73 alt1"><code class="html spaces">     </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white); </code></div>
+<div class="line number75 index74 alt2"><code class="html spaces">  </code><code class="html plain">} </code></div>
+<div class="line number76 index75 alt1"><code class="html spaces">  </code><code class="html plain">{ </code></div>
+<div class="line number77 index76 alt2"><code class="html spaces">    </code><code class="html plain">int x1 = 170; </code></div>
+<div class="line number78 index77 alt1"><code class="html spaces">     </code><code class="html plain">int y1 = 274; </code></div>
+<div class="line number79 index78 alt2"><code class="html spaces">     </code><code class="html plain">int x2 = 429; </code></div>
+<div class="line number80 index79 alt1"><code class="html spaces">     </code><code class="html plain">int y2 = 125; </code></div>
 <div class="line number81 index80 alt2"><code class="html spaces">  </code> </div>
-<div class="line number82 index81 alt1"><code class="html spaces">     </code><code class="html plain">// 畫一條線連接兩個點</code></div>
-<div class="line number83 index82 alt2"><code class="html spaces">     </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white);</code></div>
-<div class="line number84 index83 alt1"><code class="html spaces">  </code><code class="html plain">}</code></div>
-<div class="line number85 index84 alt2"><code class="html spaces">  </code><code class="html plain">// 利用一個藍色大圓與白色小圓畫出藍色環狀</code></div>
-<div class="line number86 index85 alt1"><code class="html spaces">  </code><code class="html plain">gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);</code></div>
-<div class="line number87 index86 alt2"><code class="html spaces">  </code><code class="html plain">gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);</code></div>
+<div class="line number82 index81 alt1"><code class="html spaces">     </code><code class="html plain">// 畫一條線連接兩個點 </code></div>
+<div class="line number83 index82 alt2"><code class="html spaces">     </code><code class="html plain">gdImageLine(img, x1, y1, x2, y2, white); </code></div>
+<div class="line number84 index83 alt1"><code class="html spaces">  </code><code class="html plain">} </code></div>
+<div class="line number85 index84 alt2"><code class="html spaces">  </code><code class="html plain">// 利用一個藍色大圓與白色小圓畫出藍色環狀 </code></div>
+<div class="line number86 index85 alt1"><code class="html spaces">  </code><code class="html plain">gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue); </code></div>
+<div class="line number87 index86 alt2"><code class="html spaces">  </code><code class="html plain">gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white); </code></div>
 <div class="line number88 index87 alt1"><code class="html spaces">  </code> </div>
 <div class="line number89 index88 alt2"><code class="html spaces">  </code> </div>
-<div class="line number90 index89 alt1"><code class="html spaces">  </code><code class="html plain">// 定義座標結構</code></div>
-<div class="line number91 index90 alt2"><code class="html spaces">  </code><code class="html plain">typedef struct {</code></div>
-<div class="line number92 index91 alt1"><code class="html spaces">      </code><code class="html plain">double x;</code></div>
-<div class="line number93 index92 alt2"><code class="html spaces">      </code><code class="html plain">double y;</code></div>
-<div class="line number94 index93 alt1"><code class="html spaces">  </code><code class="html plain">} Point;</code></div>
+<div class="line number90 index89 alt1"><code class="html spaces">  </code><code class="html plain">// 定義座標結構 </code></div>
+<div class="line number91 index90 alt2"><code class="html spaces">  </code><code class="html plain">typedef struct { </code></div>
+<div class="line number92 index91 alt1"><code class="html spaces">      </code><code class="html plain">double x; </code></div>
+<div class="line number93 index92 alt2"><code class="html spaces">      </code><code class="html plain">double y; </code></div>
+<div class="line number94 index93 alt1"><code class="html spaces">  </code><code class="html plain">} Point; </code></div>
 <div class="line number95 index94 alt2"><code class="html spaces">  </code> </div>
-<div class="line number96 index95 alt1"><code class="html spaces">  </code><code class="html plain">// 計算圓與線的交點</code></div>
-<div class="line number97 index96 alt2"><code class="html spaces">  </code><code class="html plain">void circleLineIntersection(double h, double k, double r, double x1, double y1, double x2, double y2) {</code></div>
-<div class="line number98 index97 alt1"><code class="html spaces">      </code><code class="html plain">// 直線斜率</code></div>
-<div class="line number99 index98 alt2"><code class="html spaces">      </code><code class="html plain">double m = (y2 - y1) / (x2 - x1);</code></div>
+<div class="line number96 index95 alt1"><code class="html spaces">  </code><code class="html plain">// 計算圓與線的交點 </code></div>
+<div class="line number97 index96 alt2"><code class="html spaces">  </code><code class="html plain">void circleLineIntersection(double h, double k, double r, double x1, double y1, double x2, double y2) { </code></div>
+<div class="line number98 index97 alt1"><code class="html spaces">      </code><code class="html plain">// 直線斜率 </code></div>
+<div class="line number99 index98 alt2"><code class="html spaces">      </code><code class="html plain">double m = (y2 - y1) / (x2 - x1); </code></div>
 <div class="line number100 index99 alt1"><code class="html spaces">  </code> </div>
-<div class="line number101 index100 alt2"><code class="html spaces">      </code><code class="html plain">// 直線方程式中的常數項</code></div>
-<div class="line number102 index101 alt1"><code class="html spaces">      </code><code class="html plain">double b = y1 - m * x1;</code></div>
+<div class="line number101 index100 alt2"><code class="html spaces">      </code><code class="html plain">// 直線方程式中的常數項 </code></div>
+<div class="line number102 index101 alt1"><code class="html spaces">      </code><code class="html plain">double b = y1 - m * x1; </code></div>
 <div class="line number103 index102 alt2"><code class="html spaces">  </code> </div>
-<div class="line number104 index103 alt1"><code class="html spaces">      </code><code class="html plain">// 圓與直線交點的計算</code></div>
-<div class="line number105 index104 alt2"><code class="html spaces">      </code><code class="html plain">double A = 1 + pow(m, 2);</code></div>
-<div class="line number106 index105 alt1"><code class="html spaces">      </code><code class="html plain">double B = 2 * (m * b - m * k - h);</code></div>
-<div class="line number107 index106 alt2"><code class="html spaces">      </code><code class="html plain">double C = pow(k, 2) - pow(r, 2) + pow(h, 2) - 2 * b * k + pow(b, 2);</code></div>
+<div class="line number104 index103 alt1"><code class="html spaces">      </code><code class="html plain">// 圓與直線交點的計算 </code></div>
+<div class="line number105 index104 alt2"><code class="html spaces">      </code><code class="html plain">double A = 1 + pow(m, 2); </code></div>
+<div class="line number106 index105 alt1"><code class="html spaces">      </code><code class="html plain">double B = 2 * (m * b - m * k - h); </code></div>
+<div class="line number107 index106 alt2"><code class="html spaces">      </code><code class="html plain">double C = pow(k, 2) - pow(r, 2) + pow(h, 2) - 2 * b * k + pow(b, 2); </code></div>
 <div class="line number108 index107 alt1"><code class="html spaces">  </code> </div>
-<div class="line number109 index108 alt2"><code class="html spaces">      </code><code class="html plain">// 判斷交點個數</code></div>
-<div class="line number110 index109 alt1"><code class="html spaces">    </code><code class="html plain">double discriminant = pow(B, 2) - 4 * A * C;</code></div>
-<div class="line number111 index110 alt2"><code class="html spaces">    </code><code class="html plain">if (discriminant &gt; 0) {</code></div>
-<div class="line number112 index111 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect1 = (-B + sqrt(discriminant)) / (2 * A);</code></div>
-<div class="line number113 index112 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect1 = m * x_intersect1 + b;</code></div>
-<div class="line number114 index113 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect1, y_intersect1);</code></div>
+<div class="line number109 index108 alt2"><code class="html spaces">      </code><code class="html plain">// 判斷交點個數 </code></div>
+<div class="line number110 index109 alt1"><code class="html spaces">    </code><code class="html plain">double discriminant = pow(B, 2) - 4 * A * C; </code></div>
+<div class="line number111 index110 alt2"><code class="html spaces">    </code><code class="html plain">if (discriminant &gt; 0) { </code></div>
+<div class="line number112 index111 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect1 = (-B + sqrt(discriminant)) / (2 * A); </code></div>
+<div class="line number113 index112 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect1 = m * x_intersect1 + b; </code></div>
+<div class="line number114 index113 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect1, y_intersect1); </code></div>
 <div class="line number115 index114 alt2"><code class="html spaces">  </code> </div>
-<div class="line number116 index115 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect2 = (-B - sqrt(discriminant)) / (2 * A);</code></div>
-<div class="line number117 index116 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect2 = m * x_intersect2 + b;</code></div>
-<div class="line number118 index117 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect2, y_intersect2);</code></div>
-<div class="line number119 index118 alt2"><code class="html spaces">    </code><code class="html plain">} else if (discriminant == 0) {</code></div>
-<div class="line number120 index119 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect = -B / (2 * A);</code></div>
-<div class="line number121 index120 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect = m * x_intersect + b;</code></div>
-<div class="line number122 index121 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect, y_intersect);</code></div>
-<div class="line number123 index122 alt2"><code class="html spaces">    </code><code class="html plain">} else {</code></div>
-<div class="line number124 index123 alt1"><code class="html spaces">        </code><code class="html plain">printf("No points.\n");</code></div>
-<div class="line number125 index124 alt2"><code class="html spaces">    </code><code class="html plain">}</code></div>
+<div class="line number116 index115 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect2 = (-B - sqrt(discriminant)) / (2 * A); </code></div>
+<div class="line number117 index116 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect2 = m * x_intersect2 + b; </code></div>
+<div class="line number118 index117 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect2, y_intersect2); </code></div>
+<div class="line number119 index118 alt2"><code class="html spaces">    </code><code class="html plain">} else if (discriminant == 0) { </code></div>
+<div class="line number120 index119 alt1"><code class="html spaces">        </code><code class="html plain">double x_intersect = -B / (2 * A); </code></div>
+<div class="line number121 index120 alt2"><code class="html spaces">        </code><code class="html plain">double y_intersect = m * x_intersect + b; </code></div>
+<div class="line number122 index121 alt1"><code class="html spaces">        </code><code class="html plain">printf("交點: (%.2f, %.2f)\n", x_intersect, y_intersect); </code></div>
+<div class="line number123 index122 alt2"><code class="html spaces">    </code><code class="html plain">} else { </code></div>
+<div class="line number124 index123 alt1"><code class="html spaces">        </code><code class="html plain">printf("No points.\n"); </code></div>
+<div class="line number125 index124 alt2"><code class="html spaces">    </code><code class="html plain">} </code></div>
 <div class="line number126 index125 alt1"><code class="html spaces">  </code> </div>
-<div class="line number127 index126 alt2"><code class="html spaces">  </code><code class="html plain">}</code></div>
-<div class="line number128 index127 alt1"><code class="html spaces">      </code><code class="html plain">// 圓的參數</code></div>
-<div class="line number129 index128 alt2"><code class="html spaces">      </code><code class="html plain">double circle_x = (int)(width/4); // 圓心 x 座標</code></div>
-<div class="line number130 index129 alt1"><code class="html spaces">      </code><code class="html plain">double circle_y = (int)(height/4); // 圓心 y 座標</code></div>
-<div class="line number131 index130 alt2"><code class="html spaces">      </code><code class="html plain">double radius = white_circle_dia +  white_circle_dia*2/15; // 圓半徑</code></div>
-<div class="line number132 index131 alt1"><code class="html spaces">      </code><code class="html plain">// 兩點座標</code></div>
-<div class="line number133 index132 alt2"><code class="html spaces">  </code><code class="html plain">double x3 = 170;</code></div>
-<div class="line number134 index133 alt1"><code class="html spaces">  </code><code class="html plain">double y3 = 274;</code></div>
-<div class="line number135 index134 alt2"><code class="html spaces">  </code><code class="html plain">double x4 = 279;</code></div>
-<div class="line number136 index135 alt1"><code class="html spaces">  </code><code class="html plain">double y4 = 165;</code></div>
+<div class="line number127 index126 alt2"><code class="html spaces">  </code><code class="html plain">} </code></div>
+<div class="line number128 index127 alt1"><code class="html spaces">      </code><code class="html plain">// 圓的參數 </code></div>
+<div class="line number129 index128 alt2"><code class="html spaces">      </code><code class="html plain">double circle_x = (int)(width/4); // 圓心 x 座標 </code></div>
+<div class="line number130 index129 alt1"><code class="html spaces">      </code><code class="html plain">double circle_y = (int)(height/4); // 圓心 y 座標 </code></div>
+<div class="line number131 index130 alt2"><code class="html spaces">      </code><code class="html plain">double radius = white_circle_dia +  white_circle_dia*2/15; // 圓半徑 </code></div>
+<div class="line number132 index131 alt1"><code class="html spaces">      </code><code class="html plain">// 兩點座標 </code></div>
+<div class="line number133 index132 alt2"><code class="html spaces">  </code><code class="html plain">double x3 = 170; </code></div>
+<div class="line number134 index133 alt1"><code class="html spaces">  </code><code class="html plain">double y3 = 274; </code></div>
+<div class="line number135 index134 alt2"><code class="html spaces">  </code><code class="html plain">double x4 = 279; </code></div>
+<div class="line number136 index135 alt1"><code class="html spaces">  </code><code class="html plain">double y4 = 165; </code></div>
 <div class="line number137 index136 alt2"><code class="html spaces">  </code> </div>
-<div class="line number138 index137 alt1"><code class="html spaces">  </code><code class="html plain">circleLineIntersection(circle_x, circle_y, radius, x4, y4, x3, y3);</code></div>
+<div class="line number138 index137 alt1"><code class="html spaces">  </code><code class="html plain">circleLineIntersection(circle_x, circle_y, radius, x4, y4, x3, y3); </code></div>
 <div class="line number139 index138 alt2"><code class="html spaces">  </code> </div>
-<div class="line number140 index139 alt1"><code class="html spaces">  </code><code class="html plain">double x5 = 279;</code></div>
-<div class="line number141 index140 alt2"><code class="html spaces">  </code><code class="html plain">double y5 = 165;</code></div>
-<div class="line number142 index141 alt1"><code class="html spaces">  </code><code class="html plain">double x6 = 429;</code></div>
-<div class="line number143 index142 alt2"><code class="html spaces">  </code><code class="html plain">double y6 = 125;</code></div>
+<div class="line number140 index139 alt1"><code class="html spaces">  </code><code class="html plain">double x5 = 279; </code></div>
+<div class="line number141 index140 alt2"><code class="html spaces">  </code><code class="html plain">double y5 = 165; </code></div>
+<div class="line number142 index141 alt1"><code class="html spaces">  </code><code class="html plain">double x6 = 429; </code></div>
+<div class="line number143 index142 alt2"><code class="html spaces">  </code><code class="html plain">double y6 = 125; </code></div>
 <div class="line number144 index143 alt1"><code class="html spaces">  </code> </div>
-<div class="line number145 index144 alt2"><code class="html spaces">  </code><code class="html plain">circleLineIntersection(circle_x, circle_y, radius, x6, y6, x5, y5);</code></div>
-<div class="line number146 index145 alt1"><code class="html spaces"> </code><strong>四條直線與圓的相交座標</strong></div>
+<div class="line number145 index144 alt2"><code class="html spaces">  </code><code class="html plain">circleLineIntersection(circle_x, circle_y, radius, x6, y6, x5, y5); </code></div>
+<div class="line number146 index145 alt1"><code class="html spaces">  </code><code class="html plain">}</code></div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
+<p><span>交點: (388.90, 55.10)<br/>交點: (155.10, 288.90)<br/>交點: (449.72, 119.47)<br/>交點: (130.07, 204.72)</span></p>
 <h1>課程評分</h1>
 <p>線上測驗、期中網站與簡報、期末網站與簡報.</p>
 <p>線上測驗:</p>

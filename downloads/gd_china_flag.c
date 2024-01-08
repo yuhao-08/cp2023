@@ -7,10 +7,7 @@ void draw_proc_flag(gdImagePtr img);
 int main() {
     int width = 300; // 國旗寬度
     int height = 200; // 國旗高度
-
-
-
-    gdImagePtr im = gdImageCreateTrueColor(width, height);
+      gdImagePtr im = gdImageCreateTrueColor(width, height);
     gdImageAlphaBlending(im, 0);
 
     draw_proc_flag(im);

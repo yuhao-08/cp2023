@@ -5,7 +5,7 @@ int main() {
     float temp_c; // 用於存儲攝氏溫度
     char line_text[50]; // 用於存儲用戶輸入的文本
 
-    printf("請輸入攝氏溫度：");
+    printf("25：");
     fgets(line_text, sizeof(line_text), stdin);
     sscanf(line_text, "%f", &temp_c);
 
