@@ -845,7 +845,7 @@
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody>
 <tr>
-<td class="gutter">
+<td class="gutter" style="width: 23.65px;">
 <div class="line number1 index0 alt2"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">1</span></span></span></span></span></span></span></span></span></span></span></span></div>
 <div class="line number2 index1 alt1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">2</span></span></span></span></span></span></span></span></span></span></span></span></div>
 <div class="line number3 index2 alt2"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">3</span></span></span></span></span></span></span></span></span></span></span></span></div>
@@ -985,7 +985,7 @@
 <div class="line number137 index136 alt2"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">137</span></span></span></span></span></span></span></span></span></span></span></span></div>
 <div class="line number138 index137 alt1"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">138</span></span></span></span></span></span></span></span></span></span></span></span></div>
 </td>
-<td class="code">
+<td class="code" style="width: 537.15px;">
 <div class="container">
 <div class="line number1 index0 alt2"><code class="cpp preprocessor">#include &lt;stdio.h&gt;</code></div>
 <div class="line number2 index1 alt1"><code class="cpp preprocessor">#include &lt;gd.h&gt;</code></div>
@@ -1135,18 +1135,112 @@
 <div>
 <div class="syntaxhighlighter html" id="highlighter_609849">
 <h2>法國</h2>
-<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;</p>
-<p>void draw_france_flag(gdImagePtr img);</p>
-<p>int main() {<br/> // Flag dimensions<br/> int width = 900;<br/> int height = 600;</p>
-<p>// Create a true-color GD image<br/> gdImagePtr img = gdImageCreateTrueColor(width, height);<br/> gdImageAlphaBlending(img, 0);</p>
-<p>// Draw the France flag on the image<br/> draw_france_flag(img);</p>
-<p>// Output the image to a file<br/> FILE *outputFile = fopen("./../images/france_flag.png", "wb");<br/> if (outputFile == NULL) {<br/> fprintf(stderr, "Error opening the output file.\n");<br/> return 1;<br/> }<br/> gdImagePngEx(img, outputFile, 9);<br/> fclose(outputFile);<br/> gdImageDestroy(img);</p>
-<p>return 0;<br/>}</p>
-<p>void draw_france_flag(gdImagePtr img) {<br/> int width = gdImageSX(img);<br/> int height = gdImageSY(img);</p>
-<p>// Define France flag colors<br/> int blue = gdImageColorAllocate(img, 0, 35, 149);<br/> int white = gdImageColorAllocate(img, 255, 255, 255);<br/> int red = gdImageColorAllocate(img, 239, 65, 53);</p>
-<p>// Calculate stripe widths<br/> int stripe_width = width / 3;</p>
-<p>// Fill the background with blue color<br/> gdImageFilledRectangle(img, 0, 0, width, height, blue);</p>
-<p>// Draw three vertical stripes in the order: blue, white, red<br/> gdImageFilledRectangle(img, 0, 0, stripe_width, height, blue);<br/> gdImageFilledRectangle(img, stripe_width, 0, stripe_width * 2, height, white);<br/> gdImageFilledRectangle(img, stripe_width * 2, 0, width, height, red);<br/>}</p>
+<p></p>
+<p></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="js preprocessor">#include &lt;stdio.h&gt;</code></div>
+<div class="line number2 index1 alt1"><code class="js preprocessor">#include &lt;gd.h&gt;</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="js plain">void draw_france_flag(gdImagePtr img);</code></div>
+<div class="line number5 index4 alt2"> </div>
+<div class="line number6 index5 alt1"><code class="js plain">int main() {</code></div>
+<div class="line number7 index6 alt2"><code class="js spaces">    </code><code class="js comments">// 法國國旗的寬度和高度</code></div>
+<div class="line number8 index7 alt1"><code class="js spaces">    </code><code class="js plain">int width = 510;</code></div>
+<div class="line number9 index8 alt2"><code class="js spaces">    </code><code class="js plain">int height = (int)(width * 2.0 / 3.0);</code></div>
+<div class="line number10 index9 alt1"> </div>
+<div class="line number11 index10 alt2"><code class="js spaces">    </code><code class="js comments">// 創建 GD 圖片物件</code></div>
+<div class="line number12 index11 alt1"><code class="js spaces">    </code><code class="js plain">gdImagePtr img = gdImageCreateTrueColor(width, height);</code></div>
+<div class="line number13 index12 alt2"><code class="js spaces">    </code><code class="js plain">gdImageAlphaBlending(img, 0);</code></div>
+<div class="line number14 index13 alt1"> </div>
+<div class="line number15 index14 alt2"><code class="js spaces">    </code><code class="js comments">// 呼叫繪圖函數</code></div>
+<div class="line number16 index15 alt1"><code class="js spaces">    </code><code class="js plain">draw_france_flag(img);</code></div>
+<div class="line number17 index16 alt2"> </div>
+<div class="line number18 index17 alt1"><code class="js spaces">    </code><code class="js comments">// 開啟輸出檔案</code></div>
+<div class="line number19 index18 alt2"><code class="js spaces">    </code><code class="js plain">FILE *outputFile = fopen(</code><code class="js string">"france_flag.png"</code><code class="js plain">, </code><code class="js string">"wb"</code><code class="js plain">);</code></div>
+<div class="line number20 index19 alt1"><code class="js spaces">    </code><code class="js keyword">if</code> <code class="js plain">(outputFile == NULL) {</code></div>
+<div class="line number21 index20 alt2"><code class="js spaces">        </code><code class="js plain">fprintf(stderr, </code><code class="js string">"Error opening the output file.\n"</code><code class="js plain">);</code></div>
+<div class="line number22 index21 alt1"><code class="js spaces">        </code><code class="js keyword">return</code> <code class="js plain">1;</code></div>
+<div class="line number23 index22 alt2"><code class="js spaces">    </code><code class="js plain">}</code></div>
+<div class="line number24 index23 alt1"> </div>
+<div class="line number25 index24 alt2"><code class="js spaces">    </code><code class="js comments">// 將圖片寫入檔案</code></div>
+<div class="line number26 index25 alt1"><code class="js spaces">    </code><code class="js plain">gdImagePng(img, outputFile);</code></div>
+<div class="line number27 index26 alt2"><code class="js spaces">    </code><code class="js plain">fclose(outputFile);</code></div>
+<div class="line number28 index27 alt1"><code class="js spaces">    </code><code class="js plain">gdImageDestroy(img);</code></div>
+<div class="line number29 index28 alt2"> </div>
+<div class="line number30 index29 alt1"><code class="js spaces">    </code><code class="js keyword">return</code> <code class="js plain">0;</code></div>
+<div class="line number31 index30 alt2"><code class="js plain">}</code></div>
+<div class="line number32 index31 alt1"> </div>
+<div class="line number33 index32 alt2"><code class="js plain">void draw_france_flag(gdImagePtr img) {</code></div>
+<div class="line number34 index33 alt1"><code class="js spaces">    </code><code class="js plain">int width = gdImageSX(img);</code></div>
+<div class="line number35 index34 alt2"><code class="js spaces">    </code><code class="js plain">int height = gdImageSY(img);</code></div>
+<div class="line number36 index35 alt1"> </div>
+<div class="line number37 index36 alt2"><code class="js spaces">    </code><code class="js plain">int blue = gdImageColorAllocate(img, 0, 85, 164);</code></div>
+<div class="line number38 index37 alt1"><code class="js spaces">    </code><code class="js plain">int white = gdImageColorAllocate(img, 255, 255, 255);</code></div>
+<div class="line number39 index38 alt2"><code class="js spaces">    </code><code class="js plain">int red = gdImageColorAllocate(img, 239, 65, 53);</code></div>
+<div class="line number40 index39 alt1"> </div>
+<div class="line number41 index40 alt2"><code class="js spaces">    </code><code class="js comments">// 畫出三個垂直條紋</code></div>
+<div class="line number42 index41 alt1"><code class="js spaces">    </code><code class="js plain">int stripeWidth = width / 3;</code></div>
+<div class="line number43 index42 alt2"><code class="js spaces">    </code><code class="js plain">gdImageFilledRectangle(img, 0, 0, stripeWidth - 1, height - 1, blue);</code></div>
+<div class="line number44 index43 alt1"><code class="js spaces">    </code><code class="js plain">gdImageFilledRectangle(img, stripeWidth, 0, 2 * stripeWidth - 1, height - 1, white);</code></div>
+<div class="line number45 index44 alt2"><code class="js spaces">    </code><code class="js plain">gdImageFilledRectangle(img, 2 * stripeWidth, 0, width - 1, height - 1, red);</code></div>
+<div class="line number46 index45 alt1"><code class="js plain">}</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div>
